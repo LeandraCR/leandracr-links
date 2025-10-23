@@ -1,13 +1,32 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* src/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* MUDANÇA: Permite o scroll se o conteúdo for maior que a tela */
+    @apply overflow-y-auto; 
+
+    /* Esconde a barra de rolagem no Firefox */
+    scrollbar-width: none;
+    /* Esconde a barra de rolagem no IE e Edge */
+    -ms-overflow-style: none;
+  }
+  
+  /* Esconde a barra de rolagem no Chrome, Safari e Opera */
+  body::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Animação do Cursor (deve continuar aqui) */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
 }
