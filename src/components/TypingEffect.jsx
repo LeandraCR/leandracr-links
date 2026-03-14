@@ -6,11 +6,10 @@ const TypingEffect = ({ text, typingSpeed = 100, deletingSpeed = 50, delay = 100
   const [isDeleting, setIsDeleting] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
-  
-  // A 'text' prop é uma string, então ela é estável
-  const words = [text]; 
 
   useEffect(() => {
+    // Colocamos o words aqui dentro para o Vercel não chiar
+    const words = [text]; 
     let timeout;
     const currentWord = words[wordIndex];
 
@@ -45,9 +44,6 @@ const TypingEffect = ({ text, typingSpeed = 100, deletingSpeed = 50, delay = 100
 
     // Limpa o timeout
     return () => clearTimeout(timeout);
-    
-    // *** AQUI ESTÁ A CORREÇÃO ***
-    // Trocamos 'words' (que é um array, sempre "novo") por 'text' (que é a prop string, estável)
   }, [charIndex, isDeleting, wordIndex, typingSpeed, deletingSpeed, delay, text]);
 
   return (
