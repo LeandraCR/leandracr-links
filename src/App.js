@@ -107,11 +107,11 @@ function App() {
             borderColorClass="hover:border-leandraPurple"
           />
           <LinkButton
-            icon={FaWhatsapp}
-            href="https://wa.me/5533998529357" 
-            label="WhatsApp"
-            borderColorClass="hover:border-leandraOrange"
-          />
+  icon={FaWhatsapp}
+  href="https://wa.me/5533998529357?text=Ol%C3%A1%2C%20L%C3%AA%21%20Gostaria%20de%20fazer%20um%20or%C3%A7amento." 
+  label="Orçamento"
+  borderColorClass="hover:border-leandraOrange"
+/>
           <LinkButton
             icon={FaLinkedinIn}
             href="https://www.linkedin.com/in/leandra-costa-ramos-501462233/" 
